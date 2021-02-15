@@ -1,0 +1,14 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+<h2>{{ ideas.title }}</h2>
+<div>{{ ideas.description }}</div>
+    <div>{{ ideas.author }}</div>
+    <div>{{ ideas.isPublished }}</div>
+    <div>{{ ideas.dateCreated |date('j/n/Y')}}</div>
+    <div>{{ ideas.category.name }}</div>
+
+
+
+{% endblock %}
+{% block title%} Nos idées|{{ parent() }}{% endblock %}

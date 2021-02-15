@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width-device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie-edge">
+    <title>{% block title %}Bucket-List!{% endblock %}</title>
+    <link rel="stylesheet" href="{{ asset ("css/app.css") }}">
+    <link rel="icon" type="image/png" href="{{ asset ( "img/logo.png") }}"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+
+
+</head>
+<body>
+<div class="container">
+    <header>
+
+        <a title="Fabián Alexis, CC BY-SA 3.0 &lt;https://creativecommons.org/licenses/by-sa/3.0&gt;,
+             via Wikimedia Commons" href="https://commons.wikimedia.org/wiki/File:Antu_color-fill.svg">
+            <img width="200" alt="Antu color-fill" src="{{ asset ( "img/logo.png") }}"></a>
+
+        <h1>BUCKET-LIST</h1>
+
+
+        {% include('inc/nav.html.twig') %}
+    </header>
+    {# read and display all flash messages #}
+    {% for label, messages in app.flashes %}
+        {% for message in messages %}
+            <div class="flash flash-{{ label }}">
+                {{ message }}
+            </div>
+        {% endfor %}
+    {% endfor %}
+
+    <main>
+
+        {% if is_granted('IS_AUTHENTICATED_REMEMBERED') %}<h2>Bonjour : {{ app.token.username }}</h2>{% endif %}
+
+        {% block main %}{% endblock %}
+    </main>
+
+    <footer>
+        &copy; Bucket-List ! {{ "now"|date("Y") }}
+
+    </footer>
+</div>
+{% block body %}{% endblock %}
+</body>
+</html>

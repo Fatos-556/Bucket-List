@@ -1,0 +1,112 @@
+body {
+    background-color: burlywood;
+    font-family: 'Pangolin', cursive;
+    text-align: center;
+}
+h1{
+    font-weight:bold;
+}
+label{
+    display: block;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: 2px 4px 10px green;
+}
+#navbar
+{
+    width: 200px;
+    background-color: burlywood;
+    font-weight:bold;
+}
+    ul{
+        list-style: none;
+        margin: 0;
+        padding: 1em 0;
+    }
+    li a{
+        text-decoration: none;
+        color:white;
+        padding-right: 3em;
+       margin-bottom: 20px;
+        position: relative;
+    }
+    li a::after{
+        content:'';
+        display:block;
+        height:0.4em;
+        width: 0%;
+        background-color: #868686;
+    }
+    li a:hover{
+        color: green;
+    }
+    li a:hover::after{
+        width:100%;
+
+    }
+a{
+    text-decoration: none;
+    color:white;
+    padding-right: 3em;
+    margin-bottom: 20px;
+    position: relative;
+}
+a::after{
+    content:'';
+    display:block;
+    height:0.4em;
+    width: 0%;
+    background-color: #868686;
+}
+a:hover{
+    color: green;
+}
+a:hover::after{
+    width:100%;
+
+}
+
+
+
+@keyframes tracking-in-expand {
+    0% {
+        letter-spacing: -0.5em;
+        opacity: 0;
+    }
+    40% {
+        opacity: 0.6;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+h2
+{
+    animation-direction: alternate;
+    animation-duration: 2400ms;
+    animation-name: moveRight;
+    color: green;
+}
+h2:hover{
+    animation: tracking-in-expand 1s infinite alternate;
+}
+.flash {
+    padding:20px;
+    display: block;
+    font-size:24px;
+    font-weight: bold;
+    color: white;
+
+}
+
+.flash-succes {
+    background-color: green;
+}
+flash-error{
+    background-color: red;
+}

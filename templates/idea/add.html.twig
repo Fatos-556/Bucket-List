@@ -1,0 +1,19 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+
+    <h2>Rajouter une idée! </h2>
+
+    {# todo: afficher un formulaire #}
+    {{ form_start(IdeaForm) }}
+    {{ form_row(IdeaForm.title)}}
+    {{ form_row(IdeaForm.description)}}
+    {{ form_row(IdeaForm.author, {'value' : app.token.username}) }}
+    {{ form_row(IdeaForm.category)}}
+
+
+    <button type="submit">Send!</button>
+    {{ form_end(IdeaForm) }}
+{% endblock %}
+
+{% block title %} Rajouter une idée  ! |{{ parent() }} {% endblock %}

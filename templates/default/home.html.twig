@@ -1,0 +1,13 @@
+{% extends 'layout.html.twig' %}
+
+{% block main %}
+    <h2>Home !!! {{ t }} </h2>
+    {% for list in l %}
+        <p>{{ loop.index }} : {{ list }}</p>
+
+    {% endfor %}
+
+
+    {{ l|join(', ') }}
+{% endblock %}
+{% block title %} Bucket-List | Home {% endblock %}
